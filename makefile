@@ -1,11 +1,11 @@
-OBJ = main.o threads_functions.o
+OBJ = main.o thread_functions.o thread_structs.o
 
 all: WaskiMost
 
 WaskiMost: $(OBJ)
-	gcc $(OBJ) -o WaskiMost
+	gcc $(OBJ) -pthread -o WaskiMost
 
-$(OBJ):thread_functions.h
+$(OBJ):thread_functions.h thread_structs.h
 
 .PHONY: clean
 
